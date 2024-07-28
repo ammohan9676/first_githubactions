@@ -23,7 +23,13 @@ jobs:
         uses: docker/metadata-action@98669ae865ea3cffbcbaa878cf57c20bbf1c6c38
         with:
           images: mohan14242/user
-      - name: print metadata
-        run: |
-          echo "tags ${{steps.meta.outputs.tags}}"
-          echo "labels ${{steps.meta.outputs.lebels}}
+  build: 
+    name: building the docker imaage 
+    runs-on:  ubuntu-latest 
+    steps: 
+      - name: checkout the reposirutyu 
+        uses: actions/checkout@v3 
+      - name: Build the Docker image
+        run: docker build . --file Dockerfile --tag first:$(date +%s)
+
+        
