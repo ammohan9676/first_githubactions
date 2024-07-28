@@ -1,0 +1,8 @@
+name: conitnuos integrations 
+
+on: 
+  push:
+    branches:
+      - main 
+jobs:
+  
