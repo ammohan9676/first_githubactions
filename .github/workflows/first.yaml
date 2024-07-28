@@ -1,6 +1,6 @@
 name: conitnuos integrations 
 env:
-  REGISTRY: ghcr.io
+  REGISTRY: dockerhub.io
   IMAGE_NAME: ${{ github.repository }}
 
 on: 
