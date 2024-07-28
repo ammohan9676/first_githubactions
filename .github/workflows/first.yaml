@@ -18,4 +18,12 @@ jobs:
         with: 
           username: ${{secrets.username}}
           password: ${{secrets.password}}
-  
+      - name: Extract metadata (tags, labels) for Docker
+        id: meta
+        uses: docker/metadata-action@98669ae865ea3cffbcbaa878cf57c20bbf1c6c38
+        with:
+          images: thetips4you/testjodejsapp
+      - name: print metadata
+        run: |
+          echo "tags ${{steps.meta.outputs.tags}}"
+          echo "labels ${{steps.meta.outputs.lebels}}
