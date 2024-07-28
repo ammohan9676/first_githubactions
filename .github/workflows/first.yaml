@@ -5,4 +5,17 @@ on:
     branches:
       - main 
 jobs:
+  push_image: 
+    name: push docker image to the github 
+    runs-on: ubuntu-latest 
+    steps: 
+      - name: checkout the repo 
+        uses: actions/checkout@v3 
+      
+
+      - name: login to the docker hub 
+        uses: docker/login-action@f054a8b539a109f9f41c372932f1ae047eff08c9
+        with: 
+          username: ${{secrets.username}}
+          password: ${{secrets.password}}
   
